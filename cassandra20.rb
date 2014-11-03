@@ -5,6 +5,9 @@ class Cassandra20 < Formula
   url 'http://www.apache.org/dyn/closer.cgi?path=/cassandra/2.0.11/apache-cassandra-2.0.11-bin.tar.gz'
   sha1 'f31d71797e1ffeeacb3c71ad35e900d11580bfc3'
 
+  conflicts_with 'cassandra',
+    :because => "cassandra20 and cassandra install the same binaries."
+
   def install
     (var+"lib/cassandra").mkpath
     (var+"log/cassandra").mkpath
